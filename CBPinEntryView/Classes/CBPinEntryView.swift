@@ -437,3 +437,20 @@ extension UIButton {
         line.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
 }
+
+// MARK: - Set pin
+extension CBPinEntryView {
+    
+    open func setPin(_ pin: String) {
+        self.clearEntry()
+        /// String(pin.prefix(length)) to remove any extra characters
+        String(pin.prefix(length)).forEach {
+            _ = self.textField(self.textField, shouldChangeCharactersIn: NSRange(location: 0, length: 0), replacementString: String($0))
+            self.textField.insertText(String($0))
+        }
+        if pin.count >= length {
+            self.resignFirstResponder()
+        }
+    }
+
+}
