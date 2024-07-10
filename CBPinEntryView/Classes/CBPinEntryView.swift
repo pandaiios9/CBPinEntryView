@@ -109,13 +109,7 @@ public protocol CBPinEntryViewDelegate: class {
 
     @IBInspectable open var secureCharacter: String = CBPinEntryViewDefaults.secureCharacter
 
-    @IBInspectable open var keyboardType: Int = CBPinEntryViewDefaults.keyboardType {
-        didSet {
-            if oldValue != keyboardType {
-                updateTextFieldStyles()
-            }
-        }
-    }
+    @IBInspectable open var keyboardType: Int = CBPinEntryViewDefaults.keyboardType
     
     open var textContentType: UITextContentType? {
         didSet {
@@ -213,6 +207,9 @@ public protocol CBPinEntryViewDelegate: class {
         self.addSubview(textField)
 
         textField.isHidden = true
+
+        /// Update text field by `keyboardType`
+        updateTextFieldStyles()
     }
     
     func updateTextFieldStyles() {
