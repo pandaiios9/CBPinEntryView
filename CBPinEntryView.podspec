@@ -24,7 +24,7 @@ This view allows a user to enter a pin or code (for security/mobile verification
   s.homepage         = 'https://github.com/Fawxy/CBPinEntryView'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Chris Byatt' => 'byatt.chris@gmail.com' }
-  s.source           = { :git => 'https://github.com/Fawxy/CBPinEntryView.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/pandaiios9/CBPinEntryView.git', :branch => 'master' }
   s.social_media_url = 'https://twitter.com/ChrisByatt'
   s.swift_version = '5.0'
 
